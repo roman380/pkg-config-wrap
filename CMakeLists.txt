@@ -1,0 +1,6 @@
+cmake_minimum_required (VERSION 3.15)
+set(CMAKE_CXX_STANDARD 17)
+project(pkg-config)
+add_executable(pkg-config pkg-config.cpp)
+target_include_directories(pkg-config PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/submodule/wil/include)
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT pkg-config)
